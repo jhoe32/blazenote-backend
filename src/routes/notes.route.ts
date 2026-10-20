@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { ContextExtended } from "../types";
-
 const notes = new Hono();
 
 // TODO: In-Workshop Activities.
@@ -85,4 +84,6 @@ notes.delete('/:id', async (ctx: ContextExtended) => {
         return Response.json({ message: `failed to delete note. reason: ${e}` 
  })
     }
- });
+  });
+
+export default notes;
